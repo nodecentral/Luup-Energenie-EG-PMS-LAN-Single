@@ -1,0 +1,193 @@
+{
+ 	"default_icon": "../../../icons/power.png",
+	"state_icons":[
+		{
+			"img": "../../../icons/power.png",
+			"conditions": [
+				{
+			"service": "urn:nodecentral-net:serviceId:EnergeniePMS1",
+			"variable": "Icon",
+			"operator": "==",
+			"value": 1
+				}
+			]
+		},
+		{
+			"img": "../../../icons/error.png",
+			"conditions": [
+				{
+			"service": "urn:nodecentral-net:serviceId:EnergeniePMS1",
+			"variable": "Icon",
+			"operator": "==",
+			"value": 2
+				}
+			]
+		}
+	],
+	"x": "2",
+	"y": "3",
+	"inScene": "1",
+	"Tabs": [
+		{
+			"Label": {
+				"lang_tag": "tabname_control",
+				"text": "Control"
+			},
+			"Position": "0",
+			"TabType": "flash",
+			"top_navigation_tab": 1,
+			"ControlGroup": [
+				{
+					"id": "1",
+					"scenegroup": "1",
+					"isSingle": "1"
+				},
+				{
+					"id": "2",
+					"scenegroup": "1",
+					"isSingle": "1"
+				}
+			],
+			"SceneGroup": [
+				{
+					"id": "1",
+					"top": "2",
+					"left": "0",
+					"x": "2",
+					"y": "1"
+				}
+			],
+			"Control": [
+				{
+					"ControlGroup": "1",
+					"ControlType": "button",
+					"top": "0",
+					"left": "0",
+					"Label": {
+						"lang_tag": "Socket1",
+						"text": "Socket1"
+					},
+					"Display": {
+						"Service": "urn:nodecentral-net:serviceId:EnergeniePMS1",
+						"Variable": "cte1",
+						"Value": "1",
+						"Top": 60,
+						"Left": 100,
+						"Width": 75,
+						"Height": 20
+					},
+					"Command": {
+						"Service": "urn:nodecentral-net:serviceId:EnergeniePMS1",
+						"Action": "OnOffCall",
+						"Parameters": [
+							{
+								"Name": "action",
+								"Value": "cte1"
+							}
+						]
+					}
+				},
+				{
+					"ControlGroup": "1",
+					"ControlType": "button",
+					"top": "0",
+					"left": "1",
+					"Label": {
+						"lang_tag": "Socket2",
+						"text": "Socket2"
+					},
+					"Display": {
+						"Service": "urn:nodecentral-net:serviceId:EnergeniePMS1",
+						"Variable": "cte2",
+						"Value": "1",
+						"Top": 60,
+						"Left": 200,
+						"Width": 75,
+						"Height": 20
+					},
+					"Command": {
+						"Service": "urn:nodecentral-net:serviceId:EnergeniePMS1",
+						"Action": "OnOffCall",
+						"Parameters": [
+							{
+								"Name": "action",
+								"Value": "cte2"
+							}
+						]
+					}
+				},
+				{
+					"ControlGroup": "2",
+					"ControlType": "button",
+					"top": "0",
+					"left": "1",
+					"Label": {
+						"lang_tag": "Socket3",
+						"text": "Socket3"
+					},
+					"Display": {
+						"Service": "urn:nodecentral-net:serviceId:EnergeniePMS1",
+						"Variable": "cte3",
+						"Value": "1",
+						"Top": 60,
+						"Left": 300,
+						"Width": 75,
+						"Height": 20
+					},
+					"Command": {
+						"Service": "urn:nodecentral-net:serviceId:EnergeniePMS1",
+						"Action": "OnOffCall",
+						"Parameters": [
+							{
+								"Name": "action",
+								"Value": "cte3"
+							}
+						]
+					}
+				},
+				{
+					"ControlGroup": "2",
+					"ControlType": "button",
+					"top": "0",
+					"left": "1",
+					"Label": {
+						"lang_tag": "Socket4",
+						"text": "Socket4"
+					},
+					"Display": {
+						"Service": "urn:nodecentral-net:serviceId:EnergeniePMS1",
+						"Variable": "cte4",
+						"Value": "1",
+						"Top": 60,
+						"Left": 400,
+						"Width": 75,
+						"Height": 20
+					},
+					"Command": {
+						"Service": "urn:nodecentral-net:serviceId:EnergeniePMS1",
+						"Action": "OnOffCall",
+						"Parameters": [
+							{
+								"Name": "action",
+								"Value": "cte4"
+							}
+						]
+					}
+				}
+			]
+			},
+			{
+			"Label": {
+				"lang_tag": "ui7_advanced",
+				"text": "Advanced"
+			},
+			"Position": "2",
+			"TabType": "javascript",
+			"ScriptName": "shared.js",
+			"Function": "advanced_device"
+		}
+	],
+	"eventList2": [],
+	"DeviceType": "urn:nodecentral-net:device:EnergeniePMS:1",
+	"device_type": "urn:nodecentral-net:device:EnergeniePMS:1"
+	}

@@ -1,0 +1,25 @@
+<?xml version="1.0"?>
+<!-- 
+	I_EnergeniePMS1.xml; Vera/openLuup "EnergeniePMS" Plug-in 
+	V1.1 Nov 2021
+-->
+<implementation>
+	<functions>
+		function initialiseEnergeniePMSPlugin(lul_device)
+			luup.log("EnergeniePMS: EnergeniePMS Plugin STARTING-UP!")
+			EnergeniePMS = require("L_EnergeniePMS1")
+			EnergeniePMSPolling = EnergeniePMS.EnergeniePMSStatusPoller
+			return EnergeniePMS.EnergeniePMSStartup(lul_device)
+		end
+	</functions>
+	<startup>initialiseEnergeniePMSPlugin</startup>
+	<actionList>
+	<action>
+		<serviceId>urn:nodecentral-net:serviceId:EnergeniePMS1</serviceId>
+		<name>OnOffCall</name>
+		<run>
+			EnergeniePMS.OnOffCall(lul_device, lul_settings.action, lul_settings)
+		</run>
+	</action>
+	</actionList>
+</implementation>

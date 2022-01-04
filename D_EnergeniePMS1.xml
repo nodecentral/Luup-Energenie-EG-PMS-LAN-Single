@@ -1,0 +1,37 @@
+<?xml version="1.0"?>
+<root xmlns="urn:schemas-upnp-org:device-1-0">
+  <specVersion>
+    <major>1</major>
+    <minor>0</minor>
+  </specVersion>
+  <device>
+    <deviceType>urn:nodecentral-net:device:EnergeniePMS:1</deviceType>
+	<friendlyName>Energenie PMS</friendlyName>
+	<staticJson>D_EnergeniePMS1.json</staticJson>
+	<manufacturer>Energenie</manufacturer>
+	<modelDescription>PMS LAN Device</modelDescription>
+	<modelName>Energenie PMS-LAN</modelName>
+	<Category_Num>66</Category_Num>
+	<SubCategory_Num>0</SubCategory_Num>
+    <implementationList>
+		<implementationFile>I_EnergeniePMS1.xml</implementationFile>
+		</implementationList>
+    <serviceList>
+      <service>
+        <serviceType>urn:schemas-nodecentral-net:service:EnergeniePMS:1</serviceType>
+        <serviceId>urn:nodecentral-net:serviceId:EnergeniePMS1</serviceId>
+        <SCPDURL>S_EnergeniePMS1.xml</SCPDURL>
+      </service>
+      <service>
+        <serviceType>urn:schemas-upnp-org:service:SwitchPower:1</serviceType>
+        <serviceId>urn:upnp-org:serviceId:SwitchPower1</serviceId>
+        <SCPDURL>S_SwitchPower1.xml</SCPDURL>
+      </service>
+      <service>
+        <serviceType>urn:schemas-micasaverde-com:service:HaDevice:1</serviceType>
+        <serviceId>urn:micasaverde-com:serviceId:HaDevice1</serviceId>
+        <SCPDURL>S_HaDevice1.xml</SCPDURL>
+	</service>
+    </serviceList>
+  </device>
+</root>
